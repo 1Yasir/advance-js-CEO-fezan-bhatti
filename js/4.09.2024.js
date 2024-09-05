@@ -68,6 +68,64 @@ list.addEventListener("click", function (event) {
 
 
 
+// Javascript DOM Manipulation to improve performance
+
+// a--->  Use selector instead nested elements
+
+// BAD
+// let menu = document.querySelector('header > nav > ul.menu');
+
+// GOOD
+let menu = document.querySelector('.menu');
+
+
+// Avoid DOM manipulations inside loops
+
+const numbers = document.querySelector(".numbers");
+
+// BAD 
+
+// for(let i = 0; i < 10; i++){
+//     numbers.textContent  += i;
+// }
+
+// Good  
+
+let numbersText = "";
+
+for(let i = 0; i < 10; i++){
+numbersText += i;
+
+}
+
+numbers.textContent  = numbersText;
+
+
+// Don't use DOM values inside loops
+
+// BAD
+
+// let nodes = document.querySelectorAll('.menu-items');
+// for (let i = 0; i < node.length; i++) { ... }
+
+// GOOD
+
+// let nodes = document.querySelectorAll('.menu-items');
+// const size = nodes.length;
+// for (let i = 0; i < size; i++) { ... }
+
+
+// JavaScript Array Search
+
+const fruits = ["Apple", "Orange", "Apple", "Mango",NaN];
+// let position = fruits.indexOf(NaN);
+let position = fruits.includes(NaN);  // include method is better than indexOf because include method detect NaN
+console.log(position);
+
+
+
+
+
 
 
 
