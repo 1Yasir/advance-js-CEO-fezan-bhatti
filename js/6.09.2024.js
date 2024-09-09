@@ -81,6 +81,8 @@ itemsName.addEventListener("input" , function(e){
 
 // parties on different array methods 
 
+// Array Find Method 
+
 // first indexof Methods 
 
 // requirement---> we want to delete a item which name is item 1
@@ -108,6 +110,32 @@ console.log(strArray.includes("are")); // true
 console.log(strArray.includes("you")); // false 
 console.log(strArray.find(item=> item === "are" )); // are   
 console.log(items.find(item=> item.name === "Item 2" )); // find items    {id: 2, name: 'Item 2', price: 44, rating: 1, image: 'https://via.placeholder.com/150?text=Item+2'}
+
+
+// Array sort Method 
+
+const fruits = ["apple" ,"b" ,'Apple'];
+const numbersArr = [3, 10, 4, 21, 5, 9, 2, 6, 5, 3, 5];
+console.log("sort method --->" , fruits.sort((a,b)=> a.toLowerCase() < b.toLowerCase() ? -1 : 1));
+console.log("sort methods --->" , numbersArr.sort((a,b)=> b - a));
+console.log("sort methods --->" , numbersArr.sort((a,b)=> a - b));
+
+
+// array reverse method 
+
+console.log("reverse methods ---->" , fruits.reverse());
+console.log("reverse methods ---->" , fruits.reverse());
+
+console.log(items.sort((a,b)=> a.price - b.price));
+
+
+
+
+
+
+
+
+
 
 
 
