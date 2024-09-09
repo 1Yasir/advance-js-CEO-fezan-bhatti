@@ -74,4 +74,46 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
 itemsName.addEventListener("input" , function(e){
     const filterByName = items.filter(item => item.name.toLowerCase().includes(e.target.value.toLowerCase()));
     renderItems(filterByName);
-})
+});
+
+
+
+
+// parties on different array methods 
+
+// first indexof Methods 
+
+// requirement---> we want to delete a item which name is item 1
+
+// step 1  we find the index number and delete from the array
+
+const itemDeleteName = "Item 1";
+// const findIndexDeleteItem = items.indexOf(itemDeleteName);
+
+// this method did not find the index because indexOf is work primitive data type such as string etc 
+
+// we try findindex of method 
+
+const findIndexDeleteItem = items.findIndex(item => item.name === itemDeleteName);
+console.log("find index delete item index ---" ,  findIndexDeleteItem); // 0
+
+// we find the index now we use splice method we delete the item 
+
+const deleteItems = items.splice(findIndexDeleteItem , 1);
+console.log("delete item---- > " , deleteItems);
+
+const strArray = ["hello" , "world" , "how" , "are"];
+console.log(strArray.indexOf("are")); // 3 (index number)
+console.log(strArray.includes("are")); // true 
+console.log(strArray.includes("you")); // false 
+console.log(strArray.find(item=> item === "are" )); // are   
+console.log(items.find(item=> item.name === "Item 2" )); // find items    {id: 2, name: 'Item 2', price: 44, rating: 1, image: 'https://via.placeholder.com/150?text=Item+2'}
+
+
+
+
+
+
+
+
+
