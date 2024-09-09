@@ -7,11 +7,11 @@ const button = document.getElementById("button");
 parent.addEventListener("click", function (event) {
     console.log("parent Clicked....");
 
-})
+}, true)
 child.addEventListener("click", function (event) {
     console.log("child Clicked....");
 
-}, true)
+})
 
 button.addEventListener("click", function (event) {
     console.log("button Clicked....");
@@ -42,8 +42,8 @@ function addTaskToList(taskText) {
     li.className = 'mb-3';
     li.innerHTML = `
         <span>${taskText}</span> 
-        <button class="delete">Delete</button> 
-        <button class="edit">Edit</button>
+        <button class="delete btn btn-outline-danger">Delete</button> 
+        <button class="edit btn btn-outline-info">Edit</button>
     `;
     list.appendChild(li);
 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Display with Filters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .items-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap */
+            gap: 20px; /* Space between items */
+        }
+
+        .item-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            width: calc(33.333% - 20px); /* Adjusting width for 3 items per row with gap */
+            box-sizing: border-box;
+        }
+
+        .item-card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .item-card .price {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .item-card .rating {
+            color: #f39c12;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .item-card {
+                width: calc(50% - 20px); /* 2 items per row on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .item-card {
+                width: calc(100% - 20px); /* 1 item per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Price Range</h3>
+            <div>
+                <input type="checkbox" id="price1" value="20">
+                <label for="price1">1 - 20</label>
+            </div>
+            <div>
+                <input type="checkbox" id="price2" value="30">
+                <label for="price2">20 - 30</label>
+            </div>
+            <div>
+                <input type="checkbox" id="price3" value="40">
+                <label for="price3">30 - 40</label>
+            </div>
+
+            <h3>Name</h3>
+            <div>
+                <input type="text" id="itemsName" placeholder="search item name">
+            </div>
+           
+
+            <h3>Rating</h3>
+            <div>
+                <input type="checkbox" id="rating1" value="4">
+                <label for="rating1">4 Stars & Above</label>
+            </div>
+            <div>
+                <input type="checkbox" id="rating2" value="3">
+                <label for="rating2">3 Stars & Above</label>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <div class="items-container" id="itemsContainer">
+                <!-- Items will be rendered here -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/6.09.2024.js"></script>
+</body>
+</html>
